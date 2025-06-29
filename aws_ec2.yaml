@@ -9,6 +9,6 @@ keyed_groups:   # This section defines how to group the instances based on their
 filters:    # This section filters the instances based on specific tags.
   tag:Name: "Backend*"
 
-compose:
+compose:  # This section allows you to create new variables based on the instance attributes.
   # This sets the ansible_host variable to connect with the private IP address without changing the hostname.
   ansible_host: private_ip_address  
