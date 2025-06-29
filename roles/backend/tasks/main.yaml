@@ -17,7 +17,7 @@
     name: expense
 
 - name: run app pre-requisites
-  tags:
+  tags:    # tags are used to run specific tasks in the playbook
   - deployment
   ansible.builtin.import_role:
     name: common

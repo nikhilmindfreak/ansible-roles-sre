@@ -1,0 +1,14 @@
+plugin: amazon.aws.aws_ec2  # we use the amazon.aws collection ,  # This is the plugin to use for dynamic inventory with AWS EC2
+regions:
+- us-east-1
+keyed_groups:   # This section defines how to group the instances based on their tags.
+- key: tags['Name']
+  prefix: ''
+  parent_group: ''
+
+filters:    # This section filters the instances based on specific tags.
+  tag:Name: "Backend*"
+
+compose:
+  # This sets the ansible_host variable to connect with the private IP address without changing the hostname.
+  ansible_host: private_ip_address  
