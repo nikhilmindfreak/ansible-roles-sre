@@ -1,0 +1,5 @@
+- name: "configure {{ component }} server"  # This is the main playbook for configuring a component server , component can be db, frontend,
+  hosts: "{{ component }}"
+  become: yes
+  roles:
+  - "{{ component }}"
